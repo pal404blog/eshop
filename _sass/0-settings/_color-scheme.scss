@@ -1,0 +1,36 @@
+/* Color Scheme */
+
+:root {
+  --brand-color: #BF616A;
+  --white: #E5E9F0;
+  --light-gray: #D8DEE9;
+  --light-blue: #5E81AC;
+  --blue-gray: #81A1C1;
+  --gray: #3B4252;
+  --dark: #2E3440;
+  --dark-blue: #161a24;
+
+  --background-color: var(--dark);
+  --background-alt-color: var(--dark-blue);
+  
+  --text-color: var(--white);
+  --text-alt-color: var(--light-gray);
+  
+  --heading-font-color: var(--white);
+
+  --link-color: var(--white);
+  --link-color-hover: var(--brand-color);
+
+  --button-color: var(--white);
+  --button-background-color: var(--brand-color);
+  --button-background-hover: var(--blue-gray);
+
+  --border-color: var(--dark);
+  --border-color-alt: var(--dark-blue);
+
+  --th-color: var(--dark);
+  --tr-color: var(--dark-blue);
+
+  --syntax-highlighting-background: #f3f3f3;
+}
+

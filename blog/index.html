@@ -1,0 +1,29 @@
+---
+layout: default
+title: Articles
+image: '/images/card_512.png'
+social_image: 'images/card_512.png'
+description: Read pieces about issues pertinent to our organizing. All articles are approved by a vote from our general membership.
+---
+
+<div class="container">
+      <div class="page-head">
+        <h1 class="page-title">{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.blog__settings.blog__title }}{% endif %}</h1>
+        {% if page.description %}
+          <p class="page-description">{{ page.description }}</p>
+        {% else site.data.settings.blog__settings.blog__description %}
+          <p class="page-description">{{ site.data.settings.blog__settings.blog__description }}</p>
+        {% endif %}
+      </div>
+
+<div class="container animate">
+  <div class="row">
+    {% if site.posts.size > 0 %}
+      {% for post in paginator.posts offset:0 %}
+        {% include article.html %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% include pagination.html %}

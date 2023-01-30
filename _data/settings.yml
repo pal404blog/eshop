@@ -1,0 +1,67 @@
+#-------------------------------
+# Site Settings
+title: Winter
+logo: '/images/light_logo.png'
+description: A caucus within the Democratic Socialists of America
+color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
+
+#-------------------------------
+# Navigation Settings
+menu__settings:
+  menu__items:
+    - title: 'Principles'
+      url: '/'
+    # - title: 'Political Education'
+      # url: '/projects/'
+    - title: 'Articles'
+      url: '/blog/'
+    - title: 'Contact Us'
+      url: '/contact/'
+#    - title: 'Elements'
+#      url: '/elements/'
+
+#-------------------------------
+social:
+- {icon: "ion-logo-twitter", link: "https://twitter.com/wintercaucusdsa"}
+#- {icon: "ion-logo-facebook", link: "https://facebook.com"}
+#- {icon: "ion-logo-instagram", link: "https://instagram.com"}
+
+# Example of adding a new link to the footer - {icon: "ion-logo-dribbble", link: "https://dribbble.com"}
+# Other icons can be found at https://ionicons.com/v4/
+
+#-------------------------------
+# Newsletter
+mailchimp: disable # To enable the mailchimp form, use the value 'enable'. To disable the form, leave the field blank.
+mailchimp__identifier: frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3 # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
+mailchimp__input__text: Your email address...
+mailchimp__button__text: Get updates
+
+
+#-------------------------------
+# Footer Navigation Settings
+footer_menu__settings:
+  menu__items:
+    - title: 'Principles'
+      url: '/'
+    #- title: 'Education'
+      #url: '/projects/'
+    - title: 'Articles'
+      url: '/blog/'
+
+#-------------------------------
+# Footer Navigation Settings
+footer_contact__settings:
+  menu__items:
+    - title: 'Contact Winter'
+      url: '/contact/'
+    - title: 'Join DSA'
+      url: 'https://www.dsausa.org/'
+#-------------------------------
+# Contact Settings
+contact:
+  email: mgeqwvjv # Add your form_id
+  description: If you have any other questions or like to request more information, feel free to email us at wintercaucus@gmail.com or use the form below and we'll get in touch with you soon.  # Add a description of your form
+
+#-------------------------------
+# Google Analytics
+google-analytics: # Add your GA Tracking Id
