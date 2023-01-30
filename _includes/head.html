@@ -1,61 +1,54 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  {%- seo -%}
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}</title>
-  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}'>
+  <!-- Load Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,300italic,300,100italic,400italic,500,500italic,700,700italic&amp;subset=latin,cyrillic' rel='stylesheet'>
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.data.settings.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+  <!-- Load CSS -->
+  <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ 'assets/css/ionicons.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/magnific-popup.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/animate.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/owl.carousel.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/syntax.css' | relative_url }}" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if page.url == "/" %}{{ site.data.settings.title }}{% else %}{{ page.title }} – {{ site.data.settings.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.url == "/" %}{{ site.data.settings.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
-  <meta name="twitter:image:src" content="{{ page.image | absolute_url }}">
+  {% assign settings = site.data.settings['settings'] %}
 
-  <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="{% if page.url == "/" %}{{ site.data.settings.title }}{% else %}{{ page.title }} – {{ site.data.settings.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.url == "/" %}{{ site.data.settings.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
-  <meta property="og:image" content="{{ page.image | absolute_url }}">
+  <!-- Template RTL -->
+  {% if settings.rtl == 1 %}
+  <link rel="stylesheet" href="{{ 'assets/css/rtl.css' | relative_url }}" />
+  {% endif %}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- Template Colors -->
+  {% if settings.quick_colors != '' %}
+  <link rel="stylesheet" href="{{ 'assets/css/template-colors/' | append: settings.quick_colors | append: '.css' | relative_url }}" />
+  {% endif %}
 
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800&family=Inter:wght@400;500;700&display=swap" as="style">
+  <!-- Template Dark -->
+  {% if settings.dark_ui == 1 %}
+  <link rel="stylesheet" href="{{ 'assets/css/template-dark/dark.css' | relative_url }}" />
+  {% endif %}
+  
 
-  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{'assets/images/favicons/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/images/favicons/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/images/favicons/favicon-16x16.png' | relative_url }}">
+  <link rel="manifest" href="{{ 'assets/images/favicons/site.webmanifest' | relative_url }}">
 
-  <!-- Ionicons -->
-  <link rel="preload" href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" as="style">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production'-%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
 
-  <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
-
-  <script>
-    {% if site.data.settings.color_scheme == "auto" %}
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.setAttribute("dark", "");
-      document.documentElement.classList.add('dark-mode');
-    }
-    {% elsif site.data.settings.color_scheme == "light" %}
-      document.documentElement.setAttribute("light", "");
-      document.documentElement.classList.add('light-mode');
-    {% elsif site.data.settings.color_scheme == "dark" %}
-      document.documentElement.setAttribute("dark", "");
-      document.documentElement.classList.add('dark-mode');
-    {% else %}
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.setAttribute("dark", "");
-      document.documentElement.classList.add('dark-mode');
-    }
-    {% endif %}
-  </script>
-
-  <style>
-  {% capture include_to_scssify %}
-    {% include main.scss %}
-  {% endcapture %}
-  {{ include_to_scssify | scssify }}
-  </style>
+  {%- include custom-head.html -%}
+  
 </head>

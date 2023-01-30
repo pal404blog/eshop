@@ -1,0 +1,9 @@
+# Home content configuration file
+##
+### here you can find all content for home page
+
+### Started
+started:
+  title: "I'm Donald Coates"
+  typed:
+    - "Email Developer | Web Producer"
