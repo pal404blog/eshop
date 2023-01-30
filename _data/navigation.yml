@@ -12,8 +12,8 @@ main:
     button: 0
     
   # Resume
-  - title: "About"
-    url: "aboutme/"
+  - title: "Resume"
+    url: "resume/"
     button: 0
   
   # Portfolio
@@ -22,11 +22,11 @@ main:
     button: 0
   
   # Blog
-  # - title: "Blog"
-  #   url: "blog/"
-  #   button: 0
+  - title: "Blog"
+    url: "blog/"
+    button: 0
   
   # Contacts
-  - title: "Contact"
+  - title: "Contacts"
     url: "contacts/"
     button: 1

@@ -5,10 +5,16 @@
 
 main:
   social:
-    - title: "LinkedIn"
-      icon: "social-linkedin"
-      url: "https://www.linkedin.com/in/donaldcoates/"
+    - title: "Dribbble"
+      icon: "social-dribbble"
+      url: "https://dribbble.com/"
+    - title: "Twitter"
+      icon: "social-twitter"
+      url: "https://twitter.com/"
     - title: "GitHub"
       icon: "social-github"
-      url: "https://github.com/DonnieEC888"
-  copy: "© 2022 Donald Coates. All rights reserved."
+      url: "https://github.com/"
+    - title: "Instagram"
+      icon: "social-instagram-outline"
+      url: "https://instagram.com/"
+  copy: "© 2020 Glitche. All rights reserved."
