@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Articles
-image: '/images/card_512.png'
-social_image: 'images/card_512.png'
-description: Read pieces about issues pertinent to our organizing. All articles are approved by a vote from our general membership.
+title: Blog
+description: Hilton blog features productivity, tips, inspiration and strategies for massive profits. Find out how to set up a successful blog or how to make yours even better!
 ---
 
 <div class="container">
+  <div class="row">
+    <div class="col col-8 push-2 col-t-12 push-t-0">
       <div class="page-head">
         <h1 class="page-title">{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.blog__settings.blog__title }}{% endif %}</h1>
         {% if page.description %}
@@ -15,6 +15,9 @@ description: Read pieces about issues pertinent to our organizing. All articles 
           <p class="page-description">{{ site.data.settings.blog__settings.blog__description }}</p>
         {% endif %}
       </div>
+    </div>
+  </div>
+</div>
 
 <div class="container animate">
   <div class="row">

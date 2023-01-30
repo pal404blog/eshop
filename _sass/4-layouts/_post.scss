@@ -62,13 +62,12 @@
 
 .post-title,
 .page-title {
-  margin-top: 36px;
-  margin-bottom: 36px;
-  font-size: $font-size-h1;
+  margin-bottom: 32px;
+  font-size: 72px;
   line-height: 1;
 
   @media only screen and (max-width: $wide) {
-    font-size: 48px;
+    font-size: 60px;
   }
 
   @media only screen and (max-width: $mobile) {
@@ -131,10 +130,9 @@
 .post,
 .page,
 .project-content {
-  max-width: 840px;
-  margin-bottom: 128px;
+  max-width: 780px;
+  margin: 0 auto 60px;
   color: var(--text-color);
-
 
   a {
     font-weight: 500;
@@ -175,7 +173,7 @@
 /* Share */
 .post__share {
   padding-bottom: 48px;
-  // border-bottom: 0px solid var(--background-alt-color);
+  border-bottom: 1px solid var(--background-alt-color);
 
   .share__list {
     display: flex;
@@ -247,6 +245,23 @@
 
   &.is-related {
     display: block;
+  }
+}
+
+/* Disqus */
+.show-comments {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.post__comments {
+  max-width: 780px;
+  margin: 0 auto 100px;
+
+  @media only screen and (max-width: $mobile) {
+     &.is-open {
+       margin: 0 auto 80px;
+     }
   }
 }
 

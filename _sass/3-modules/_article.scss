@@ -1,6 +1,6 @@
 /* Article */
 .article {
-  margin-bottom: 128px;
+  margin-bottom: 64px;
   will-change: transform;
   transition: transform .2s ease-in-out;
 
@@ -15,9 +15,8 @@
 
 .blog {
   .article {
-    margin-bottom: 128px;
+    margin-bottom: 32px;
   }
-  
 }
 
 .article__image {
@@ -68,7 +67,7 @@
 
 .article__title {
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 32px;
   line-height: 1.1;
 
   a {
@@ -81,7 +80,7 @@
   }
 
   @media only screen and (max-width: $desktop) {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 

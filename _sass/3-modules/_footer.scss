@@ -1,16 +1,42 @@
 /* Footer */
 .footer {
-  background-color: var(--background-alt-color);
-  min-height: 360px;
   .footer__inner {
-    padding: 64px 0;
+    padding: 100px 0;
+    border-top: 1px solid var(--background-alt-color);
+  
     .row .col {
       flex-grow: 1;
     }
 
     @media only screen and (max-width: $desktop) {
-      padding-top: 64px 0 24px;
-      padding: 128px 0;
+      padding: 100px 0 32px;
+    }
+  }
+}
+
+/* Footer Gallery */
+.footer__gallery {
+  .gallery {
+    grid-template-columns: repeat(4, auto);
+    margin-left: 0;
+    margin-bottom: 0;
+
+    img {
+      margin-left: 0;
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  .gallery__image {
+    img {
+      height: 100%;
+    }
+  }
+
+  @media only screen and (max-width: $desktop) {
+    .gallery {
+      grid-template-columns: repeat(2, auto);
     }
   }
 }
@@ -29,6 +55,43 @@
   }
 }
 
+.footer__author-avatar {
+  position: relative;
+  width: 250px;
+  min-width: 250px;
+  height: 250px;
+  margin-right: 40px;
+  transform: translate(0);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--background-alt-color);
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+  }
+
+  @media only screen and (max-width: $desktop) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.footer__author-name {
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.footer__author-bio {
+  margin-bottom: 0;
+}
 
 .social {
   margin-top: 24px;
@@ -54,11 +117,11 @@
     align-items: center;
     width: 40px;
     height: 40px;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 8px;
     will-change: transform;
     color: var(--heading-font-color);
-    background-color: var(--background-color);
+    background-color: var(--background-alt-color);
 
     &:hover {
       transform: translateY(-3px);
@@ -70,7 +133,7 @@
 
 /* Footer Navigation */
 .footer__nav {
-  text-align: left;
+  text-align: right;
 
   @media only screen and (max-width: $desktop) {
     text-align: left;
@@ -79,7 +142,7 @@
 
 .footer__nav-title {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 32px;
   line-height: 1.2;
 }
 
@@ -87,7 +150,7 @@
   line-height: 1;
 
   .footer__nav-item {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   
     &:last-child {
       margin-bottom: 0;
@@ -97,7 +160,7 @@
   .footer__nav-link {
     font-family: $heading-font-family;
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   @media only screen and (max-width: $desktop) {

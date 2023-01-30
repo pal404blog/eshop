@@ -28,22 +28,48 @@ document.addEventListener("DOMContentLoaded", function() {
     menuList.classList.remove("is-open");
   }
 
+  if (toggleTheme) {
+    toggleTheme.addEventListener("click", () => {
+      darkMode();
+    });
+  };
+
+
+  // Theme Switcher
+  function darkMode() {
+    if (html.classList.contains('dark-mode')) {
+      html.classList.remove('dark-mode');
+      localStorage.removeItem("theme");
+      document.documentElement.removeAttribute("dark");
+    } else {
+      html.classList.add('dark-mode');
+      localStorage.setItem("theme", "dark");
+      document.documentElement.setAttribute("dark", "");
+    }
+  }
+
 
   /* ================================================================
   // Stop Animations During Window Resizing and Switching Theme Modes
   ================================================================ */
   let disableTransition;
 
-  window.addEventListener("resize", () => {
-    stopAnimation();
-  });
+  if (toggleTheme) {
+    toggleTheme.addEventListener("click", () => {
+      stopAnimation();
+    });
 
-  function stopAnimation() {
-    document.body.classList.add("disable-animation");
-    clearTimeout(disableTransition);
-    disableTransition = setTimeout(() => {
-      document.body.classList.remove("disable-animation");
-    }, 100);
+    window.addEventListener("resize", () => {
+      stopAnimation();
+    });
+
+    function stopAnimation() {
+      document.body.classList.add("disable-animation");
+      clearTimeout(disableTransition);
+      disableTransition = setTimeout(() => {
+        document.body.classList.remove("disable-animation");
+      }, 100);
+    }
   }
 
 

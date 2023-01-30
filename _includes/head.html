@@ -13,9 +13,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if page.url == "/" %}{{ site.data.settings.title }}{% else %}{{ page.title }} – {{ site.data.settings.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.url == "/" %}{{ site.data.settings.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
-  <meta name="twitter:image" content="{{ page.image | absolute_url }}">
-  <meta name="twitter:site" content="@WinterCaucus">
-  <meta name="twitter:domain" content="https://wintercaucus.org">
+  <meta name="twitter:image:src" content="{{ page.image | absolute_url }}">
 
   <!-- Facebook OpenGraph -->
   <meta property="og:title" content="{% if page.url == "/" %}{{ site.data.settings.title }}{% else %}{{ page.title }} – {{ site.data.settings.title }}{% endif %}">
@@ -34,11 +32,30 @@
 
   <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
 
+  <script>
+    {% if site.data.settings.color_scheme == "auto" %}
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    }
+    {% elsif site.data.settings.color_scheme == "light" %}
+      document.documentElement.setAttribute("light", "");
+      document.documentElement.classList.add('light-mode');
+    {% elsif site.data.settings.color_scheme == "dark" %}
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    {% else %}
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    }
+    {% endif %}
+  </script>
+
   <style>
   {% capture include_to_scssify %}
     {% include main.scss %}
   {% endcapture %}
   {{ include_to_scssify | scssify }}
   </style>
-  
 </head>
